@@ -1,3 +1,4 @@
+
 require('dotenv').config()
 
 const express = require('express')
@@ -31,3 +32,4 @@ massive ({
     app.set('db', dbInstance)
     app.listen(PORT, ()=> console.log(`server is up and running on ${PORT}`))
 })
+
