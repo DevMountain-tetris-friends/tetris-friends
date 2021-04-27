@@ -24,3 +24,11 @@ export default function reducer(state = initialState, action){
             return state
     }
 }
+
+export function loginUser(payload) {
+    return{
+        type: LOGIN_USER,
+        payload: payload
+    }
+}
+
