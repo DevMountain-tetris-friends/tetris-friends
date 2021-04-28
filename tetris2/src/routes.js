@@ -1,13 +1,15 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
-import mainPage from './Components/mainPage/mainPage';
-import tetris from './Components/gameMarathon/tetris';
+import MainPage from './Components/MainPage/MainPage';
+import Tetris from './Components/GameMarathon/Tetris';
+import Login from './Components/Login/Login';
 
 
 
 export default(
     <Switch> 
-        <Route component={mainPage} exact path ='/'/>
-        <Route component={tetris} path='/tetris' />
+        <Route component={Login} exact path='/'/>
+        <Route component={MainPage} path ='/mainpage'/>
+        <Route component={Tetris} path='/tetris' />
     </Switch>
 )
