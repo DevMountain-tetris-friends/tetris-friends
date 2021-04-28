@@ -28,9 +28,6 @@ app.get("/auth/logout", player.logout);
 app.get("/auth/getUser", player.userData);
 app.put("/auth/userUpdate", player.userUpdate);
 
-        maxAge: 1000 * 60 * 60 * 24 * 7
-    }
-}))
 
 app.post('/auth/login', player.login)
 app.post('/auth/register', player.register)
