@@ -1,4 +1,4 @@
-const bcrypt = require('bcreypt.js')
+const bcrypt = require('bcryptjs')
 
 module.exports = {
   login: async(req, res) => {
