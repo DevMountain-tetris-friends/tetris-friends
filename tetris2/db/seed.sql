@@ -8,8 +8,8 @@ CREATE TABLE users (
   highest_score INT(10)
 );
 
-CREATE TABLE scores (
-  score_id INT PRIMARY KEY,
-  user_id INT REFERENCES users(user_id) ON DELETE cascade, 
-  highest_score INT REFERENCES users(highest_score)
-)
+-- CREATE TABLE scores (
+--   score_id INT PRIMARY KEY,
+--   user_id INT REFERENCES users(user_id) ON DELETE cascade, 
+--   highest_score INT REFERENCES users(highest_score)
+-- )
