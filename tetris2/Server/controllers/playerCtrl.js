@@ -2,6 +2,7 @@ const bcrypt = require('bcryptjs')
 
 module.exports = {
   login: async(req, res) => {
+    console.log('posted');
     const {username, password} = req.body; 
     const db = req.app.get('db');
     const result = await db.get_player({username});
