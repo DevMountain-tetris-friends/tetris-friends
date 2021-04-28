@@ -1,2 +1,2 @@
-SELECT * FROM players  
+SELECT * FROM users  
 WHERE username = ${username};

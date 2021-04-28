@@ -28,43 +28,23 @@ app.get("/auth/logout", player.logout);
 app.get("/auth/getUser", player.userData);
 app.put("/auth/userUpdate", player.userUpdate);
 
-
-app.post('/auth/login', player.login)
-app.post('/auth/register', player.register)
-app.get('/auth/logout', player.logout)
-app.get('/auth/getUser', player.userData) 
-app.put('/auth/userUpdate', player.userUpdate)
-
-app.get('/auth/scoreboard', score.displayScore)
-
+// app.get('/auth/scoreboard', score.displayScore)
 
 // app.use(express.static(__dirname + '/../build'))
 // app.get('*', (req, res) => {
 //     res.sendFile(path.join(__dirname, '../build/index.html'))
 // })
 
-
 massive({
   connectionString: CONNECTION_STRING,
-  ssl: {
-    rejectUnauthorized: false,
-  },
-}).then((dbInstance) => {
-  app.set("db", dbInstance);
-  app.listen(PORT, () => console.log(`server is up and running on ${PORT}`));
-}).catch(err => console.log(err));
-
-massive ({
-    connectionString: CONNECTION_STRING,
-    ssl: {
-        rejectUnauthorized: false
-    }
-})
+  ssl: {rejectUnauthorized: false}
+  })
     .then(dbInstance => {
-        app.set('db', dbInstance)
-        app.listen(PORT, ()=> console.log(`server is up and running on ${PORT}`))
-    .catch(err => console.log(err))
-
-})
+      app.set("db", dbInstance);
+      app.listen(PORT, () => {
+        console.log(`db is running and server is listening on ${PORT}.`)
+      });
+    })
+    .catch(err => console.log(err));
 
 
