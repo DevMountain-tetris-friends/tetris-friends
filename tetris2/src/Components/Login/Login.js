@@ -54,17 +54,6 @@ function Login(props) {
         
     }
     
-    const guest = () => {
-        axios.post('/auth/login', {
-            username: 'Guest', 
-            password: 'Guest',
-        })
-        .then(res => {
-            console.log(res.data)
-            props.loginUser(res.data)
-        })
-        .catch(err => console.log(err))
-    }
 
     return(
         <div>
