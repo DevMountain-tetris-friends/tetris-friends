@@ -14,7 +14,7 @@ function Login(props) {
 
     useEffect(() => {
         if(user){
-            history.push('/mainpage')
+            history.push('/')
         }
     }, [user, push]);
 
@@ -28,9 +28,13 @@ function Login(props) {
         })
         .then(res => {
             console.log(res.data)
+            history.push('/mainpage')
             props.loginUser(res.data)
+            
         })
         .catch(err => console.log(err))
+
+        
     }
     
     const guest = () => {
