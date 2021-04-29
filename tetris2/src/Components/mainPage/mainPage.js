@@ -4,8 +4,8 @@ function MainPage() {
 
 
     return(
-        <div>
-      
+        <div style={{backgroudColor: 'black'}}>
+            
         </div>
     )
     

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
 import MainPage from './Components/mainPage/MainPage';
-import Tetris from './Components/gameMarathon/tetris';
+import Tetris from './Components/gameMarathon/Tetris';
 import Login from './Components/Login/Login';
 
 

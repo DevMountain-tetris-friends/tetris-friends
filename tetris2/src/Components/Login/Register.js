@@ -1,19 +1,19 @@
 import React, {useState} from 'react'
 import axios from 'axios'
-import {Link} from 'react-router-dom'
+// import {Link} from 'react-router-dom'
 import {updateUser} from '../../redux/userReducer';
 import {connect} from 'react-redux'
 import './register.scss'
 
 const Register = (props) => {
+  const {updateUser, setRegister} = props
 
-  const {updateUser} = props
-
+  // const [register, setRegister] = useState(false);
   const [errorMsg, setErrorMsg] = useState('')
   
   const [input, setInput] = useState({
-    firstName: '',
-    lastName: '',
+    first_name: '',
+    last_name: '',
     email: '', 
     username: '', 
     password: ''
@@ -32,15 +32,16 @@ const Register = (props) => {
     // console.log(input)
     axios.post('/auth/register', input)
       .then(res => {
+        console.log(res)
         updateUser(res.data)
         setInput({
-          firstName: '',
-          lastName: '',
+          first_name: '',
+          last_name: '',
           email: '', 
           username: '', 
           password: ''
         })
-        props.history.push('/')
+        props.history.push('/mainpage')
       })
       .catch(err => setErrorMsg(err.response.data))
   }
@@ -56,6 +57,7 @@ const Register = (props) => {
         <input className="register-input" placeholder="Username" onChange={handleChange} value={input.username} name='username'/>
         <input className="register-input" placeholder="Password" onChange={handleChange} value={input.password} name='password'/>
         <button type="submit" name="submit">SUBMIT</button>
+        <button onClick={() => setRegister(false)}>BACK</button> 
         {errorMsg ? <p className="errMsg">{errorMsg}</p> : null}
       </form>
     </div>

@@ -2,6 +2,7 @@ const bcrypt = require('bcryptjs')
 
 module.exports = {
   login: async(req, res) => {
+    
     const {username, password} = req.body; 
     const db = req.app.get('db');
     const result = await db.get_player({username});
@@ -10,15 +11,17 @@ module.exports = {
       return res.status(409).send('Username does not exist');
     }
     const authenticated = bcrypt.compareSync(password, existingPlayer.password)
+    console.log('posted');
     if (!authenticated) {
       return res.status(401).send('Password is incorrect')
     }
     delete existingPlayer.password
     req.session.player = existingPlayer
     return res.status(200).send(req.session.player);
+    
   },
   register: async(req, res) => {
-    const {username, password, firstName, lastName, email} = req.body;
+    const {username, password, first_name, last_name, email} = req.body;
     const db = req.app.get('db');
     const result = await db.get_player({username});
     const existingPlayer = result[0];
@@ -27,7 +30,7 @@ module.exports = {
     }
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(password, salt);
-    const registeredPlayer = await db.register_player({username, firstName, lastName, email, hash})
+    const registeredPlayer = await db.register_player({username, first_name, last_name, email, hash})
     const player = registeredPlayer[0]
     delete player.password
     req.session.player = player
