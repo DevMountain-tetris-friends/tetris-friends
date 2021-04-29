@@ -62,12 +62,11 @@ function Login(props) {
                 <input className='input-box' value={usernameInputText} type='text' onChange={e => setUsernameInputText(e.target.value)}/>
                 <p> password </p>
                 <input className='input-box' value={passwordInputText} type='password' onChange={ e => setPasswordInputText(e.target.value)}/>
+                <button onClick={loginFunction}>Login</button>
+                <button onClick={() => setRegister(true)}>Register</button>
+                <button onClick={guest}>Guest</button>
             </div>
             }
-
-            <button onClick={loginFunction}>Login</button>
-            <button onClick={() => setRegister(true)}>Register</button>
-            <button onClick={guest}>Guest</button>
         </div>
     )
     
