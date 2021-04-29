@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const player = require("./controllers/playerCtrl");
-// const score = require('./controllers/scoreCtrl')
+const score = require('./controllers/scoreCtrl')
 const massive = require("massive");
 const session = require("express-session");
 
@@ -44,27 +44,26 @@ app.get('/auth/scoreboard', score.displayScore)
 // })
 
 
-massive({
-  connectionString: CONNECTION_STRING,
-  ssl: {
-    rejectUnauthorized: false,
-  },
-}).then((dbInstance) => {
-  app.set("db", dbInstance);
-  app.listen(PORT, () => console.log(`server is up and running on ${PORT}`));
-}).catch(err => console.log(err));
+// massive({
+//   connectionString: CONNECTION_STRING,
+//   ssl: {
+//     rejectUnauthorized: false,
+//   },
+// }).then((dbInstance) => {
+//   app.set("db", dbInstance);
+//   app.listen(PORT, () => console.log(`server is up and running on ${PORT}`));
+// }).catch(err => console.log(err));
 
 massive ({
-    connectionString: CONNECTION_STRING,
-    ssl: {
-        rejectUnauthorized: false
-    }
+  connectionString: CONNECTION_STRING,
+  ssl: {
+      rejectUnauthorized: false
+  }
 })
-    .then(dbInstance => {
-        app.set('db', dbInstance)
-        app.listen(PORT, ()=> console.log(`server is up and running on ${PORT}`))
-    .catch(err => console.log(err))
-
+.then(dbInstance => {
+  app.set('db', dbInstance)
+  app.listen(PORT, () => console.log(`server running on ${PORT}`))
 })
+.catch(e => console.log(e))
 
 
