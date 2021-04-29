@@ -23,11 +23,9 @@ function Login(props) {
     const history = useHistory()
     
     const loginFunction = () => {
-        
         axios.post('/auth/login', {
             username: usernameInputText, 
             password: passwordInputText,
-
         })
         .then(res => {
             console.log(res.data)
@@ -35,14 +33,12 @@ function Login(props) {
             props.loginUser(res.data)
         })
         .catch(err => console.log(err))
-        
     }
 
     const guest = () => {
         axios.post('/auth/login', {
             username: 'Guest', 
             password: 'Guest',
-
         })
         .then(res => {
             console.log(res.data)
@@ -50,7 +46,7 @@ function Login(props) {
             props.loginUser(res.data)
             
         })
-        .catch(err => console.log(err))
+        // .catch(err => console.log(err))
 
         
     }
