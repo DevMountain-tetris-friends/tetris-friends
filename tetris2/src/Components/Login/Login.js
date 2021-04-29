@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 import {loginUser} from '../../redux/userReducer';
 import {connect} from 'react-redux';
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 import Register from './Register';
 
 function Login(props) {
@@ -14,14 +14,26 @@ function Login(props) {
 
     useEffect(() => {
         if(user){
-            push('/')
+            push('/mainpage')
         }
     }, [user, push]);
     
     const loginFunction = () => {
         axios.post('/auth/login', {
-            username: '', 
-            password: '',
+            username: usernameInputText, 
+            password: passwordInputText,
+        })
+        .then(res => {
+            console.log(res.data)
+            props.loginUser(res.data)
+        })
+        .catch(err => console.log(err))
+    }
+
+    const guest = () => {
+        axios.post('/auth/login', {
+            username: 'Guest', 
+            password: 'Guest',
         })
         .then(res => {
             console.log(res.data)
@@ -34,7 +46,7 @@ function Login(props) {
         <div>
             <header>Header</header>
             
-            {register ? <Register /> :
+            {register ? <Register setRegister={setRegister}/> :
 
             <div>
                 <p> username </p>
@@ -46,7 +58,7 @@ function Login(props) {
 
             <button onClick={loginFunction}>Login</button>
             <button onClick={() => setRegister(true)}>Register</button>
-            <button>Guest</button>
+            <button onClick={guest}>Guest</button>
         </div>
     )
     

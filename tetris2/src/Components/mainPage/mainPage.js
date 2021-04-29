@@ -4,7 +4,7 @@ function MainPage() {
 
 
     return(
-        <div style={{backgroudColor: 'black'}}>
+        <div style={{backgroundColor: 'black'}}>
             
         </div>
     )
