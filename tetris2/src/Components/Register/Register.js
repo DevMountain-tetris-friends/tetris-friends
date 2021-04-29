@@ -5,7 +5,7 @@ import {withRouter} from 'react-router-dom'
 //Remember we can 
 import {updateUser} from '../../redux/userReducer';
 import {connect} from 'react-redux'
-import './register.scss'
+import './Register.scss'
 
 const Register = (props) => {
   const {updateUser, setRegister} = props

@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 
 import {Link, useHistory} from 'react-router-dom';
 
-import Register from './Register';
+import Register from '../Register/Register';
 
 function Login(props) {
     const [usernameInputText, setUsernameInputText] = useState('');
