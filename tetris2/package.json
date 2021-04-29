@@ -2,7 +2,7 @@
   "name": "tetris2",
   "version": "0.1.0",
   "private": true,
-  "main": "server/index.js",
+  "main": "Server/index.js",
   "proxy": "http://localhost:4000",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",

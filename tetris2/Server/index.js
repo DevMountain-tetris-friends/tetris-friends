@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const player = require("./controllers/playerCtrl");
-// const score = require('./controllers/scoreCtrl')
+const score = require('./controllers/scoreCtrl')
 const massive = require("massive");
 const session = require("express-session");
 

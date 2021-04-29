@@ -14,26 +14,30 @@ function Login(props) {
 
     useEffect(() => {
         if(user){
-            push('/mainpage')
+            push('/')
         }
     }, [user, push]);
     
     const loginFunction = () => {
+        
         axios.post('/auth/login', {
             username: usernameInputText, 
             password: passwordInputText,
+
         })
         .then(res => {
             console.log(res.data)
             props.loginUser(res.data)
         })
         .catch(err => console.log(err))
+        
     }
 
     const guest = () => {
         axios.post('/auth/login', {
             username: 'Guest', 
             password: 'Guest',
+
         })
         .then(res => {
             console.log(res.data)
