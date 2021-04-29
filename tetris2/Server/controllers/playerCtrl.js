@@ -15,7 +15,7 @@ module.exports = {
     }
     delete existingPlayer.password
     req.session.player = existingPlayer
-    return res.status(200).send(req.session.user);
+    return res.status(200).send(req.session.player);
   },
   register: async(req, res) => {
     const {username, password, firstName, lastName, email} = req.body;
@@ -27,7 +27,7 @@ module.exports = {
     }
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(password, salt);
-    const registeredPlayer = await db.register_player({username, firstName, lastName, email})
+    const registeredPlayer = await db.register_player({username, firstName, lastName, email, hash})
     const player = registeredPlayer[0]
     delete player.password
     req.session.player = player
