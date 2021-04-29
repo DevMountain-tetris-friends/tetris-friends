@@ -19,9 +19,10 @@ function Login(props) {
     }, [user, push]);
     
     const loginFunction = () => {
+        
         axios.post('/auth/login', {
-            username: '', 
-            password: '',
+            username: usernameInputText, 
+            password: passwordInputText,
         })
         .then(res => {
             console.log(res.data)
