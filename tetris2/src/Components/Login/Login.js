@@ -14,6 +14,10 @@ function Login() {
     }
 
     
+function guest () {
+    loginUserDispatch('Guest', 'Guest')
+    console.log('guest function fired')
+}
 
     console.log('got here');
     
@@ -34,7 +38,7 @@ function Login() {
 
             <button onClick={loginFunction}>Login</button>
             <button onClick={() => setRegister(true)}>Register</button>
-            <button>Guest</button>
+            <button onClick={guest}>Guest</button>
         </div>
     )
     
