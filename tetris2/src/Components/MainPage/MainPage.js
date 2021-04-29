@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import axios from 'axios'
-import {loginUser} from '../../redux/userReducer'
+import {loginUser, updateUser} from '../../redux/userReducer'
 import {connect} from 'react-redux'
 
 function MainPage(props) {
@@ -48,4 +48,4 @@ const mapStateToProps = (stateRedux) => {
     }
 }
 
-export default connect(mapStateToProps, {loginUser})(MainPage);
+export default connect(mapStateToProps, {loginUser, updateUser})(MainPage);
