@@ -19,7 +19,7 @@ function MainPage(props) {
         axios.get('/auth/logout')
         .then(res => {
           history.push('/')
-          updateUser(null)
+          updateUser({})
           })
           .catch(err => console.log(err))
       }
