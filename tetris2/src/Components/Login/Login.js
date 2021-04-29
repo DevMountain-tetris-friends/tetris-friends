@@ -31,6 +31,7 @@ function Login(props) {
         })
         .then(res => {
             console.log(res.data)
+            history.push('/mainpage')
             props.loginUser(res.data)
         })
         .catch(err => console.log(err))
@@ -53,18 +54,7 @@ function Login(props) {
 
         
     }
-    
-    const guest = () => {
-        axios.post('/auth/login', {
-            username: 'Guest', 
-            password: 'Guest',
-        })
-        .then(res => {
-            console.log(res.data)
-            props.loginUser(res.data)
-        })
-        .catch(err => console.log(err))
-    }
+
 
     return(
         <div>
