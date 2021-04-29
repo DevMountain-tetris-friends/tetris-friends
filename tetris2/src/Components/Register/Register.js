@@ -2,7 +2,6 @@ import React, {useState} from 'react'
 import axios from 'axios'
 // import {Link} from 'react-router-dom'
 import {withRouter} from 'react-router-dom'
-//Remember we can 
 import {updateUser} from '../../redux/userReducer';
 import {connect} from 'react-redux'
 import './Register.scss'

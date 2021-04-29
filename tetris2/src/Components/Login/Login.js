@@ -54,7 +54,7 @@ function Login(props) {
 
         
     }
-
+    console.log(props)
     return(
         <div>
             <header>Header</header>
