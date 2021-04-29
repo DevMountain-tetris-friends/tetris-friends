@@ -31,6 +31,7 @@ function Login(props) {
         })
         .then(res => {
             console.log(res.data)
+            history.push('/mainpage')
             props.loginUser(res.data)
         })
         .catch(err => console.log(err))
