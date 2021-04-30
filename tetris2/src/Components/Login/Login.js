@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 import {loginUser} from '../../redux/userReducer';
 import {connect} from 'react-redux';
-import {Link} from 'react-router-dom';
-import Register from './Register';
+
+import {Link, useHistory} from 'react-router-dom';
+
+import Register from '../Register/Register';
 
 function Login(props) {
     const [usernameInputText, setUsernameInputText] = useState('');
@@ -14,40 +16,50 @@ function Login(props) {
 
     useEffect(() => {
         if(user){
-            push('/')
+            history.push('/')
         }
     }, [user, push]);
+
+    const history = useHistory()
     
     const loginFunction = () => {
         
         axios.post('/auth/login', {
             username: usernameInputText, 
             password: passwordInputText,
+
         })
         .then(res => {
             console.log(res.data)
+            history.push('/mainpage')
             props.loginUser(res.data)
         })
         .catch(err => console.log(err))
+        
     }
 
     const guest = () => {
         axios.post('/auth/login', {
             username: 'Guest', 
             password: 'Guest',
+
         })
         .then(res => {
             console.log(res.data)
+            history.push('/mainpage')
             props.loginUser(res.data)
+            
         })
         .catch(err => console.log(err))
-    }
 
+        
+    }
+    console.log(props)
     return(
         <div>
             <header>Header</header>
             
-            {register ? <Register /> :
+            {register ? <Register setRegister={setRegister}/> :
 
             <div>
                 <p> username </p>

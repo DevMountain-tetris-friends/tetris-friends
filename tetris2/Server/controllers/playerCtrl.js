@@ -16,8 +16,8 @@ module.exports = {
       return res.status(401).send('Password is incorrect')
     }
     delete existingPlayer.password
-    req.session.player = existingPlayer
-    return res.status(200).send(req.session.player);
+    req.session.user = existingPlayer
+    return res.status(200).send(req.session.user);
     
   },
   register: async(req, res) => {
@@ -41,6 +41,7 @@ module.exports = {
     return res.sendStatus(200)
   },
   userData: async(req, res) => {
+    console.log(req.session)
     const { user } = req.session;
     if (user) return res.status(200).send(user);
     else return res.sendStatus(401)

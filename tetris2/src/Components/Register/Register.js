@@ -1,9 +1,10 @@
 import React, {useState} from 'react'
 import axios from 'axios'
 // import {Link} from 'react-router-dom'
+import {withRouter} from 'react-router-dom'
 import {updateUser} from '../../redux/userReducer';
 import {connect} from 'react-redux'
-import './register.scss'
+import './Register.scss'
 
 const Register = (props) => {
   const {updateUser, setRegister} = props
@@ -43,7 +44,6 @@ const Register = (props) => {
         })
         props.history.push('/mainpage')
       })
-      .catch(err => setErrorMsg(err.response.data))
   }
   
 
@@ -51,8 +51,8 @@ const Register = (props) => {
     <div className="register-container">
       <form onSubmit={handleRegister}>
         <input className="register-input" placeholder="First Name" onChange={handleChange}
-        value={input.firstName} name='firstName'/>
-        <input className="register-input" placeholder="Last Name" onChange={handleChange} value={input.lastName} name='lastName'/>
+        value={input.first_name} name='first_name'/>
+        <input className="register-input" placeholder="Last Name" onChange={handleChange} value={input.last_name} name='last_name'/>
         <input className="register-input" placeholder="Email" onChange={handleChange} value={input.email} name='email'/>
         <input className="register-input" placeholder="Username" onChange={handleChange} value={input.username} name='username'/>
         <input className="register-input" placeholder="Password" onChange={handleChange} value={input.password} name='password'/>
@@ -64,4 +64,4 @@ const Register = (props) => {
   )
 }
 
-export default connect(null,{updateUser})(Register)
+export default withRouter(connect(null,{updateUser})(Register))
