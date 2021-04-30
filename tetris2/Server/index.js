@@ -3,8 +3,10 @@ const express = require("express");
 const app = express();
 const player = require("./controllers/playerCtrl");
 const score = require('./controllers/scoreCtrl')
+const community = require('./controllers/communityCtrl')
 const massive = require("massive");
 const session = require("express-session");
+const middleware = require('./middleware/middleware')
 
 const { SESSION_SECRET, CONNECTION_STRING, PORT } = process.env;
 
@@ -27,6 +29,11 @@ app.post("/auth/register", player.register);
 app.get("/auth/logout", player.logout);
 app.get("/auth/getUser", player.userData);
 app.put("/auth/userUpdate", player.userUpdate);
+
+app.get("/api/post", community.allPosts)
+app.post("/api/post", community.addPost)
+app.put("/api/post",middleware.verifyUser, community.editPost)
+app.delete("/api/post",middleware.verifyUser, community.deletePost)
 
 // app.get('/auth/scoreboard', score.displayScore)
 

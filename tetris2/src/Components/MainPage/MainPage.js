@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import axios from 'axios'
 import {loginUser, updateUser} from '../../redux/userReducer'
 import {connect} from 'react-redux'
+import CommunityBoard from '../CommunityBoard/CommunityBoard'
 
 function MainPage(props) {
     const {user, updateUser, history} = props
@@ -36,6 +37,9 @@ function MainPage(props) {
             </div>
             <div>
                 <h1>LEADERBOARD</h1>
+            </div>
+            <div>
+                <CommunityBoard />
             </div>
         </div>
     )
