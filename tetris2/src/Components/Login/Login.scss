@@ -1,1 +1,78 @@
-@import '../../variables'
+@import '../../variables';
+
+.login-h1 {
+  font-size: 5rem;
+  font-weight: 800;
+  padding: 100px 0 100px;
+  // animation: myanimation4 10s infinite;
+
+  .h1-yellow {
+    color: #b1b144;
+    // animation: myanimation2 7s infinite;
+  }
+  .h1-blue {
+    color: blue;
+    // animation: myanimation3 10s infinite;
+  }
+  .h1-red {
+    color: red;
+    // animation: myanimation 7s infinite;
+  }
+  .h1-space {
+    padding-right:18px;
+  }
+}
+
+.login-container {
+  height: 100vh;
+  align-items: center;
+  // display: flex;
+  /* text-align: center; */
+  justify-content: center;
+
+  .login-wrap {
+
+    .login-input {
+      
+      input {
+        font-size: 1.5rem;
+        margin: 0 5px;
+      }
+    }
+
+    button {
+      margin: 15px 5px;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+// @keyframes myanimation {
+//   0% {color: red;}
+//   25%{color:#b1b144;}
+//   50%{color:green;}
+//   75%{color:black;}
+//   100% {color: red;}
+// }
+
+// @keyframes myanimation2 {
+//   0% {color: #b1b144;}
+//   25%{color:blue;}
+//   50%{color:green;}
+//   75%{color:brown;}
+//   100% {color: black;}
+// }
+// @keyframes myanimation3 {
+//   0% {color: blue;}
+//   25%{color:red;}
+//   50%{color:black;}
+//   75%{color:#b1b144;}
+//   100% {color: green;}
+// }
+// @keyframes myanimation4 {
+//   0% {color: blue;}
+//   25%{color:black;}
+//   50%{color:blue;}
+//   75%{color:black;}
+//   100% {color: blue;}
+// }

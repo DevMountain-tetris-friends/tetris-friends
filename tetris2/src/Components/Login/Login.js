@@ -1,11 +1,12 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-use-before-define */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 import {loginUser} from '../../redux/userReducer';
 import {connect} from 'react-redux';
-
-import {Link, useHistory} from 'react-router-dom';
-
+import {useHistory} from 'react-router-dom';
 import Register from '../Register/Register';
+import './Login.scss'
 
 function Login(props) {
     const [usernameInputText, setUsernameInputText] = useState('');
@@ -52,16 +53,47 @@ function Login(props) {
     }
     console.log(props)
     return(
-        <div>
-            <header>Header</header>
-            
-            {register ? <Register setRegister={setRegister}/> :
-
-            <div>
-                <p> username </p>
-                <input className='input-box' value={usernameInputText} type='text' onChange={e => setUsernameInputText(e.target.value)}/>
-                <p> password </p>
-                <input className='input-box' value={passwordInputText} type='password' onChange={ e => setPasswordInputText(e.target.value)}/>
+        <div className="login-container">            
+            {register ?
+            <>
+            <h1 className="login-h1">
+                T
+                <span className="h1-yellow">E</span>
+                <span className="h1-blue">T</span>
+                R
+                <span className="h1-red">I</span>
+                <span className="h1-blue h1-space">S</span>
+                F
+                <span className="h1-red">R</span>
+                <span className="h1-yellow">I</span>
+                E
+                <span className="h1-red">N</span>
+                <span className="h1-blue">D</span>
+                S
+            </h1>
+            <Register setRegister={setRegister}/> 
+            </>
+            :
+            <div className="login-wrap">
+                <h1 className="login-h1">
+                    T
+                    <span className="h1-yellow">E</span>
+                    <span className="h1-blue">T</span>
+                    R
+                    <span className="h1-red">I</span>
+                    <span className="h1-blue h1-space">S</span>
+                    F
+                    <span className="h1-red">R</span>
+                    <span className="h1-yellow">I</span>
+                    E
+                    <span className="h1-red">N</span>
+                    <span className="h1-blue">D</span>
+                    S
+                </h1>
+                <div className="login-input">
+                    <input placeholder="username..." className='input-box' value={usernameInputText} type='text' onChange={e => setUsernameInputText(e.target.value)}/>
+                    <input placeholder="password..." className='input-box' value={passwordInputText} type='password' onChange={ e => setPasswordInputText(e.target.value)}/>
+                </div>
                 <button onClick={loginFunction}>Login</button>
                 <button onClick={() => setRegister(true)}>Register</button>
                 <button onClick={guest}>Guest</button>

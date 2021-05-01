@@ -1,2 +1,17 @@
-@import '../../variables'
+@import '../../variables';
 
+.register-container {
+
+  input {
+    font-size: 1.5rem;
+    margin: 5px 5px;
+  }
+
+  .form-button {
+    
+    button {
+      margin: 15px 5px;
+      font-size: 1.5rem;
+    }
+  }
+}
