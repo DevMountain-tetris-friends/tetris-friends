@@ -1,4 +1,4 @@
-UPDATE players 
+UPDATE users 
 SET
   username=${username}, 
   first_name=${first_name}, 
