@@ -10,6 +10,7 @@ import User from '../User/User'
 import {connect} from 'react-redux'
 import CommunityBoard from '../CommunityBoard/CommunityBoard'
 
+
 import './MainPage.scss'
 
 function MainPage(props) {
@@ -67,6 +68,9 @@ function MainPage(props) {
             </Modal>
             <div>
                 <CommunityBoard/>
+            </div>
+            <div>
+                <CommunityBoard />
             </div>
         </div>
     )
