@@ -8,9 +8,9 @@ import {
 import Modal from '../Modal/Modal'
 import User from '../User/User'
 import {connect} from 'react-redux'
-import CommunityBoard from '../CommunityBoard/CommunityBoard'
+// import CommunityBoard from '../CommunityBoard/CommunityBoard'
 
-import './MainPage.scss'
+import './MainPage.scss';
 
 function MainPage(props) {
     const {user, updateUser, history} = props
@@ -65,9 +65,9 @@ function MainPage(props) {
             <Modal ref={modalRef}>
                 <User modalRef={modalRef}/>
             </Modal>
-            <div>
+            {/* <div>
                 <CommunityBoard/>
-            </div>
+            </div> */}
         </div>
     )
     
