@@ -12,7 +12,7 @@ CREATE TABLE community_posts (
     id serial primary key,
     title varchar(255) not null,
     content text,
-    author_id INT NOT null references users(user_id),
+    author_id INT NOT null references users(user_id) ON DELETE CASCADE,
     date_created timestamp
 );
 

@@ -56,5 +56,16 @@ module.exports = {
     delete updatedPlayer.password
     req.session.user = updatedPlayer
     return res.status(200).send(req.session.user)
+  },
+  deleteUser: (req, res) => {
+    // console.log(req.session)
+    const {user} = req.session;
+    console.log(user)
+    const db = req.app.get('db')
+    db.delete_user({userId:user.user_id})
+    .then(() => {
+        req.session.destroy()
+        res.sendStatus(200)
+    })
   }
 }

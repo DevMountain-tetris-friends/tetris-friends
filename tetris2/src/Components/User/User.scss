@@ -160,6 +160,36 @@ button:hover {
 						width: 30%;
 					}
 				}
+
+				.edit-buttons {
+					display: flex;
+					flex-direction: column;
+					width: 82%;
+				}
+
+				button {
+					font-weight: 700;
+				}
+
+				.submit {
+					background:rgb(122, 187, 102);
+					color: white;
+					margin-bottom: 5px;
+					
+					&:hover {
+						background: rgb(46, 87, 33);
+					}
+				}
+
+				.delete {
+					background: rgb(187, 102, 102);
+					color: white;
+					// font-weight: 700;
+
+					&:hover {
+						background: rgb(136, 21, 21);
+					}
+				}
 			}
 
 			li {
