@@ -61,31 +61,15 @@ function Login(props) {
             {register ?
             <>
             <h1 className="login-h1">
-                T
-                <span className="h1-yellow">E</span>
-                <span className="h1-blue">T</span>
-                R
-                <span className="h1-red">I</span>
-                <span className="h1-blue h1-space">S</span>
-                F
-                <span className="h1-red">R</span>
-                <span className="h1-yellow">I</span>
-                E
-                <span className="h1-red">N</span>
-                <span className="h1-blue">D</span>
-                S
-            </h1>
-            <Register setRegister={setRegister}/> 
-            </>
-            :
-            <div className="login-wrap">
-                <h1 className="login-h1">
+                <div>
                     T
                     <span className="h1-yellow">E</span>
                     <span className="h1-blue">T</span>
                     R
                     <span className="h1-red">I</span>
                     <span className="h1-blue h1-space">S</span>
+                </div>
+                <div>
                     F
                     <span className="h1-red">R</span>
                     <span className="h1-yellow">I</span>
@@ -93,6 +77,30 @@ function Login(props) {
                     <span className="h1-red">N</span>
                     <span className="h1-blue">D</span>
                     S
+                </div>
+            </h1>
+            <Register setRegister={setRegister}/> 
+            </>
+            :
+            <div className="login-wrap">
+                <h1 className="login-h1">
+                    <div>
+                        T
+                        <span className="h1-yellow">E</span>
+                        <span className="h1-blue">T</span>
+                        R
+                        <span className="h1-red">I</span>
+                        <span className="h1-blue h1-space">S</span>
+                        <div>
+                    </div>
+                        F
+                        <span className="h1-red">R</span>
+                        <span className="h1-yellow">I</span>
+                        E
+                        <span className="h1-red">N</span>
+                        <span className="h1-blue">D</span>
+                        S
+                    </div>
                 </h1>
                 <div className="login-input">
                     <input placeholder="username..." className='input-box' value={usernameInputText} type='text' onChange={e => setUsernameInputText(e.target.value)}/>

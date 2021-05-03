@@ -3,11 +3,20 @@
 .login-h1 {
   font-size: 7rem;
   font-weight: 800;
-  margin: 131px 0 100px;
+  margin: 50px 0 100px;
+  position: relative;
+  bottom: 64%;
+
   // animation: myanimation4 10s infinite;
+  @media (max-width: $laptopMd){
+    font-size: 5.5rem;
+  }
+  @media (max-width: $tablet){
+    font-size: 3.5rem;
+  }
 
   .h1-yellow {
-    color: #b1b144;
+    color: #5a9752;
     // animation: myanimation2 7s infinite;
   }
   .h1-blue {
@@ -33,16 +42,22 @@
   // background-size: covers;
 
   video {
-    position: fixed;
+    // position: fixed;
     z-index: -1;
-    width: 110vh;
+    width: 100%;
     height: 60vh;
-    top: 8%;
-    right: 10%;
+    // top: 8%;
+    // right: 10%;
     opacity: .35;
+
+    @media (min-width: $laptop){
+      width: 110vh;
+    }
   }
   
   .login-wrap {
+    position: relative;
+    bottom: 64%;
     display: inline-flex;
     display: relative;
     flex-direction: column;
@@ -64,6 +79,10 @@
     }
     .login-buttons {
       flex-direction: row;
+      @media (max-width: $phone){
+        flex-direction: column;
+        display: flex;
+      }
       button {
         margin: 15px 5px;
         border: 3px solid black;
@@ -71,6 +90,11 @@
         width: 21%;
         align-self: center;
         border-radius: 10px;
+        @media (max-width: $phone){
+          margin: 5px 0;
+          font-size: 1rem;
+          padding: 5px 0;
+        }
       }
     }
   }
