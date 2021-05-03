@@ -6,6 +6,7 @@ import {loginUser} from '../../redux/userReducer';
 import {connect} from 'react-redux';
 import {useHistory} from 'react-router-dom';
 import Register from '../Register/Register';
+import videoBg from '../../images/video-Bg.mp4'
 import './Login.scss'
 
 function Login(props) {
@@ -53,7 +54,10 @@ function Login(props) {
     }
     console.log(props)
     return(
-        <div className="login-container">            
+        <div className="login-container">   
+            <video autoPlay loop="true" muted>
+                <source src={videoBg} type="video/mp4"/>
+            </video>         
             {register ?
             <>
             <h1 className="login-h1">
@@ -94,9 +98,11 @@ function Login(props) {
                     <input placeholder="username..." className='input-box' value={usernameInputText} type='text' onChange={e => setUsernameInputText(e.target.value)}/>
                     <input placeholder="password..." className='input-box' value={passwordInputText} type='password' onChange={ e => setPasswordInputText(e.target.value)}/>
                 </div>
-                <button onClick={loginFunction}>Login</button>
-                <button onClick={() => setRegister(true)}>Register</button>
-                <button onClick={guest}>Guest</button>
+                <div className="login-buttons">
+                    <button onClick={loginFunction}>Login</button>
+                    <button onClick={() => setRegister(true)}>Register</button>
+                    <button onClick={guest}>Guest</button>
+                </div>  
             </div>
             }
         </div>
