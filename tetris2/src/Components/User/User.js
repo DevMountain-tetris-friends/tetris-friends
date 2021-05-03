@@ -85,11 +85,28 @@ const User = (props) => {
             {
               editView ? (
                 <form onSubmit={handleSubmit}>
-                  <input name="first_name" placeholder={user?.first_name} onChange={handleChange}></input>
-                  <input name="last_name" placeholder={user?.last_name} onChange={handleChange}></input>
-                  <input name="email" placeholder={user?.email} onChange={handleChange}></input>
-                  <input name="username" placeholder={user?.username} onChange={handleChange}></input>
+                  <div>
+                    <div>
+                      First Name
+                    </div>
+                    <input name="first_name" placeholder={user?.first_name} onChange={handleChange}></input>
+                  </div>
+                  <div>
+                    <div>
+                      Last Name
+                    </div>
+                    <input name="last_name" placeholder={user?.last_name} onChange={handleChange}></input>
+                  </div>
+                  <div>
+                    <div>Email</div>
+                    <input name="email" placeholder={user?.email} onChange={handleChange}></input>
+                  </div>
+                  <div>
+                    <div>Username</div>
+                    <input name="username" placeholder={user?.username} onChange={handleChange}></input>
+                  </div>
                   <button className="submit" type="submit">Submit</button>
+                  <button className="submit">Submit</button>
                 </form>
               ) : (
                 null
@@ -100,8 +117,18 @@ const User = (props) => {
                 null
               ) : (
                 <>
-                  <li className="mail">{user?.email}</li>
-                  <li className="username">{user?.username}</li>
+                  <li className="mail">
+                    <div className="li-header">
+                      Email
+                    </div>
+                    <span>{user?.email}</span>
+                  </li>
+                  <li className="username">
+                    <div className="li-header">
+                      Username
+                    </div>
+                    <span>{user?.username}</span>
+                  </li>
                 </>
               )
             }
