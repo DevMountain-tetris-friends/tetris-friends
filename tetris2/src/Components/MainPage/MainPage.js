@@ -3,7 +3,7 @@ import axios from 'axios'
 import {loginUser, updateUser} from '../../redux/userReducer'
 import {connect} from 'react-redux'
 import CommunityBoard from '../CommunityBoard/CommunityBoard'
-
+import ChatBox from '../CommunityBoard/ChatBox'
 function MainPage(props) {
     const {user, updateUser, history} = props
 
@@ -40,6 +40,7 @@ function MainPage(props) {
             </div>
             <div>
                 <CommunityBoard />
+                <ChatBox />
             </div>
         </div>
     )
