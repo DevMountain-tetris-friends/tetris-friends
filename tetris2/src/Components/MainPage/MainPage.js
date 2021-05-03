@@ -67,7 +67,7 @@ function MainPage(props) {
             </Modal>
             {/* <div>
                 <CommunityBoard/>
-            </div> */}
+            </div> */} 
         </div>
     )
     
