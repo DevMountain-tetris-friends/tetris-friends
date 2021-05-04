@@ -7,6 +7,8 @@ import {
 } from 'react-icons/fa'
 import Modal from '../Modal/Modal'
 import User from '../User/User'
+// import TetrisPage from '../GameMarathon/TetrisPage'
+import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import CommunityBoard from '../CommunityBoard/CommunityBoard'
 
@@ -54,7 +56,7 @@ function MainPage(props) {
             </div>
             <div className="main-wrap">
                 <div className="play-wrap">
-                    <button>PLAY</button> 
+                    <Link to='/tetris'>PLAY</Link> 
                 </div>
                 <div className="leaderboard-wrap">
                     <h1>LEADERBOARD</h1>

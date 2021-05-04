@@ -120,7 +120,7 @@ const User = (props) => {
                   </div>
                   <div className="edit-buttons">
                     <button className="submit" type="submit">Submit</button>
-                    <button className="delete" onClick={handleDelete} >Delete Account</button>
+                    {/* <button className="delete" onClick={handleDelete} >Delete Account</button> */}
                   </div>
                 </form>
               ) : (
