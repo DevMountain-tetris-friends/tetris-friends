@@ -1,2 +1,31 @@
-@import '../../variables'
+@import '../../variables';
 
+.register-container {
+  position: relative;
+  bottom: 64%;
+  input {
+    font-size: 1.5rem;
+    margin: 5px 5px;
+    border: 3px solid black;
+  }
+
+  form {
+    display: inline-flex;
+    flex-direction: column;
+
+    .form-email {
+      align-self: flex-start;
+    }
+
+    .form-button {
+    
+      button {
+        margin: 15px 5px;
+        font-size: 1.5rem;
+        border-radius: 10px;
+        border: 3px solid black;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

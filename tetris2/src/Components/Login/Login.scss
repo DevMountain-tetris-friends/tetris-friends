@@ -1,1 +1,131 @@
-@import '../../variables'
+@import '../../variables';
+
+.login-h1 {
+  font-size: 7rem;
+  font-weight: 800;
+  margin: 50px 0 100px;
+  position: relative;
+  bottom: 64%;
+
+  // animation: myanimation4 10s infinite;
+  @media (max-width: $laptopMd){
+    font-size: 5.5rem;
+  }
+  @media (max-width: $tablet){
+    font-size: 3.5rem;
+  }
+
+  .h1-yellow {
+    color: #5a9752;
+    // animation: myanimation2 7s infinite;
+  }
+  .h1-blue {
+    color: blue;
+    // animation: myanimation3 10s infinite;
+  }
+  .h1-red {
+    color: red;
+    // animation: myanimation 7s infinite;
+  }
+  .h1-space {
+    padding-right:18px;
+  }
+}
+
+.login-container {
+  height: 100vh;
+  align-items: center;
+  // display: flex;
+  /* text-align: center; */
+  justify-content: center;
+  // background: url('../../images/video-Bg.mp4');
+  // background-size: covers;
+
+  video {
+    // position: fixed;
+    z-index: -1;
+    width: 100%;
+    height: 60vh;
+    // top: 8%;
+    // right: 10%;
+    opacity: .35;
+
+    @media (min-width: $laptop){
+      width: 120vh;
+    }
+  }
+  
+  .login-wrap {
+    position: relative;
+    bottom: 64%;
+    display: inline-flex;
+    display: relative;
+    flex-direction: column;
+
+    login-h1 {
+      background: white;
+      font-size: 7rem;
+      margin: 0 0 100px;
+      margin-top:131px;
+    }
+
+    .login-input {
+      
+      input {
+        font-size: 1.70rem;
+        margin: 0 5px;
+        border: 3px solid black;
+      }
+    }
+    .login-buttons {
+      flex-direction: row;
+      @media (max-width: $phone){
+        flex-direction: column;
+        display: flex;
+      }
+      button {
+        margin: 15px 5px;
+        border: 3px solid black;
+        font-size: 1.5rem;
+        width: 21%;
+        align-self: center;
+        border-radius: 10px;
+        @media (max-width: $phone){
+          margin: 5px 0;
+          font-size: 1rem;
+          padding: 5px 0;
+        }
+      }
+    }
+  }
+}
+
+// @keyframes myanimation {
+//   0% {color: red;}
+//   25%{color:#b1b144;}
+//   50%{color:green;}
+//   75%{color:black;}
+//   100% {color: red;}
+// }
+
+// @keyframes myanimation2 {
+//   0% {color: #b1b144;}
+//   25%{color:blue;}
+//   50%{color:green;}
+//   75%{color:brown;}
+//   100% {color: black;}
+// }
+// @keyframes myanimation3 {
+//   0% {color: blue;}
+//   25%{color:red;}
+//   50%{color:black;}
+//   75%{color:#b1b144;}
+//   100% {color: green;}
+// }
+// @keyframes myanimation4 {
+//   0% {color: blue;}
+//   25%{color:black;}
+//   50%{color:blue;}
+//   75%{color:black;}
+//   100% {color: blue;}
+// }

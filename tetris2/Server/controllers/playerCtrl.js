@@ -33,8 +33,8 @@ module.exports = {
     const registeredPlayer = await db.register_player({username, first_name, last_name, email, hash})
     const player = registeredPlayer[0]
     delete player.password
-    req.session.player = player
-    return res.status(201).send(req.session.player)
+    req.session.user = player
+    return res.status(201).send(req.session.user)
   },
   logout: async(req, res) =>  {
     req.session.destroy();
@@ -51,10 +51,21 @@ module.exports = {
     const {username, first_name, last_name, email} = req.body;
     console.log(req.body) 
     const db = req.app.get('db');
-    const [updatedPlayer] =  await db.update_Player({username, first_name, last_name, email, userId:user.user_id})
-    // console.log(updatedUser)
+    const [updatedPlayer] =  await db.update_player({username, first_name, last_name, email, userId:user.user_id})
+    console.log(updatedPlayer)
     delete updatedPlayer.password
     req.session.user = updatedPlayer
     return res.status(200).send(req.session.user)
+  },
+  deleteUser: (req, res) => {
+    // console.log(req.session)
+    const {user} = req.session;
+    console.log(user)
+    const db = req.app.get('db')
+    db.delete_user({userId:user.user_id})
+    .then(() => {
+        req.session.destroy()
+        res.sendStatus(200)
+    })
   }
 }

@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;1,600&display=swap');
+
 .App {
   text-align: center;
+  font-family: "Montserrat", sans-serif;
 }
 
 .Buttons{
@@ -8,6 +11,6 @@
   margin: 10px;
   border-radius: 100px;
   width: 100px;
-  background-color: #C0BEBE;
-  color: black;
+  background-color: #121119;
+  color: white;
 }
