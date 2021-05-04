@@ -10,6 +10,9 @@ import User from '../User/User'
 import {connect} from 'react-redux'
 import CommunityBoard from '../CommunityBoard/CommunityBoard'
 
+import ChatBox from '../CommunityBoard/ChatBox'
+
+
 
 import './MainPage.scss'
 
@@ -71,6 +74,7 @@ function MainPage(props) {
             </div>
             <div>
                 <CommunityBoard />
+                <ChatBox />
             </div>
         </div>
     )

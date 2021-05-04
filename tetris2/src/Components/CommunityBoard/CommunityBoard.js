@@ -23,7 +23,8 @@ class CommunityBoard extends Component {
     render () {
         return (
             <div>
-                <ChatBox />
+                
+                
                 <DisplayPost />
             </div>
         );
