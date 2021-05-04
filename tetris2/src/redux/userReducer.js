@@ -39,3 +39,9 @@ export function updateUser(payload){
       }
 }
 
+export function getUser(payload){
+    return{
+        type: GET_USER,
+        payload: payload
+    }
+}

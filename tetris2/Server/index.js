@@ -22,23 +22,23 @@ const app = express(),
 
   io.on('connection', socket => {
     console.log('user connected')
+    socket.on('message sent', data => {
+      console.log(data)
+      io.emit('message dispatched', data)
+    })
+
+    // socket.on('join room', data => {
+    //   console.log('room joined', data.room)
+    //   socket.join(data.room)
+    //   io.to(data.room).emit('room joined')
+    // })
     // socket.on('message sent', data => {
-    //   console.log(data)
-    //   io.emit('message dispatched', data.message)
+    //   io.to(data.room).emit('message dispatched', data.message)
     // })
 
-    socket.on('join room', data => {
-      console.log('room joined', data.room)
-      socket.join(data.room)
-      io.to(data.room).emit('room joined')
-    })
-    socket.on('message sent', data => {
-      io.to(data.room).emit('message dispatched', data.message)
-    })
-
-    socket.on('disconnect', () => {
-      console.log('user disconnected')
-    })
+    // socket.on('disconnect', () => {
+    //   console.log('user disconnected')
+    // })
 
   })
 
