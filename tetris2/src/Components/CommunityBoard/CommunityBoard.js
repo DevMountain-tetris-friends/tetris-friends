@@ -9,7 +9,7 @@ class CommunityBoard extends Component {
 
     constructor () {
         super()
-        this.state ={
+        this.state = {
             id: '',
             username: '',
             postTitle: '',
