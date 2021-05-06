@@ -30,7 +30,7 @@ function Login(props) {
             password: passwordInputText,
         })
         .then(res => {
-            console.log(res.data)
+            // console.log(res.data)
             history.push('/mainpage')
             props.loginUser(res.data)
         })
@@ -43,7 +43,7 @@ function Login(props) {
             password: 'Guest',
         })
         .then(res => {
-            console.log(res.data)
+            // console.log(res.data)
             history.push('/mainpage')
             props.loginUser(res.data)
             
@@ -55,7 +55,7 @@ function Login(props) {
     console.log(props)
     return(
         <div className="login-container">   
-            <video autoPlay loop="true" muted>
+            <video autoPlay loop={true} muted>
                 <source src={videoBg} type="video/mp4"/>
             </video>         
             {register ?

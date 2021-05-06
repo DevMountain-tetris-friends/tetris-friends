@@ -46,14 +46,14 @@ class ChatBox extends Component {
     this.socket.disconnect();
   }
   updateMessage(data) {
-    console.log(data);
+    // console.log(data);
     this.state.chat.push(data)
-    console.log(this.state.chat)
+    // console.log(this.state.chat)
     this.renderChat()
   }
   
   renderChat = () => {
-    console.log(this.state.chat)
+    // console.log(this.state.chat)
 		return this.state.chat.map(({ username, message }, index) => (
 			<div key={index}>
 				<h3>
@@ -72,7 +72,7 @@ class ChatBox extends Component {
         username: this.props.user.username,
         message: this.state.message
     });
-    console.log('this is sendMessage')
+    // console.log('this is sendMessage')
     this.setState({message: ''})
     // this.renderChat()
   }
