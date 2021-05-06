@@ -1,12 +1,12 @@
 module.exports = {
     verifyUser: async (req, res, next) => {
-        console.log('this is the middlware')
+        // console.log('this is the middlware')
         const { username, id } = req.body
         let postUser = ''
         const db = req.app.get('db')
         db.get_post_by_id(id)
         .then(dbRes => {
-            console.log(dbRes)
+            // console.log(dbRes)
             postUser = dbRes[0].author_id
         })
         // .then()

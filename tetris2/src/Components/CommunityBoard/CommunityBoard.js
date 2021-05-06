@@ -1,6 +1,6 @@
 import { Component } from 'react'
-import axios from 'axios'
-import ChatBox from './ChatBox'
+// import axios from 'axios'
+// import ChatBox from './ChatBox'
 import DisplayPost from './DisplayPost'
 
 
@@ -18,7 +18,7 @@ class CommunityBoard extends Component {
     }
 
     componentDidMount () {
-        console.log('this is the Community Board')
+        // console.log('this is the Community Board')
     }
     render () {
         return (

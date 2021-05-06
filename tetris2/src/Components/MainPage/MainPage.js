@@ -1,16 +1,19 @@
+
 import React, {useEffect, useRef, useState} from 'react';
 import axios from 'axios'
 import {loginUser, updateUser} from '../../redux/userReducer'
+
 import {
     FaUserAlt,
     // FaTimes,
-} from 'react-icons/fa'
-import Modal from '../Modal/Modal'
-import User from '../User/User'
-import {connect} from 'react-redux'
-import CommunityBoard from '../CommunityBoard/CommunityBoard'
+} from 'react-icons/fa';
+import Modal from '../Modal/Modal';
+import User from '../User/User';
+import {connect} from 'react-redux';
+import CommunityBoard from '../CommunityBoard/CommunityBoard';
+import {Link} from 'react-router-dom';
 
-import ChatBox from '../CommunityBoard/ChatBox'
+import ChatBox from '../CommunityBoard/ChatBox';
 
 
 
@@ -24,8 +27,8 @@ function MainPage(props) {
     useEffect(() => {
         axios.get('/auth/getUser')
         .then(res => {
-            console.log(res.data)
-            updateUser(res.data)
+            // console.log(res.data);
+            updateUser(res.data);
             })
         .catch(err => console.log(err))
     }, [updateUser])
@@ -33,15 +36,15 @@ function MainPage(props) {
     const logout = () => {
         axios.get('/auth/logout')
         .then(res => {
-            history.push('/')
-            updateUser({})
+            history.push('/');
+            updateUser({});
             })
         .catch(err => console.log(err))
     }
     
     const openModal = () => {
-        console.log('working????')
-        modalRef.current.openModal()
+        // console.log('working????');
+        modalRef.current.openModal();
     };
 
     const checkGuest = () => {
@@ -50,7 +53,7 @@ function MainPage(props) {
         }
     }
     
-    console.log(props)
+    // console.log(props)
     return(
         <div className="main-section">
             <div className="head-wrap">
@@ -63,7 +66,7 @@ function MainPage(props) {
             </div>
             <div className="main-wrap">
                 <div className="play-wrap">
-                    <button>PLAY</button> 
+                    <Link to={'/tetris'}><button>PLAY</button></Link>
                 </div>
                 <div className="leaderboard-wrap">
                     <h1>LEADERBOARD</h1>

@@ -1,15 +1,10 @@
+import React from 'react';
+import TetrisGame from './TetrisComponents/TetrisGame';
 
-
-function Tetris() {
-
-    return(
-        <div>
-            <header>Header</header>
-            
-        </div>
-    )
-    
-}
-
+const Tetris = () => (
+  <div className="Tetris">
+    <TetrisGame />
+  </div>
+);
 
 export default Tetris;

@@ -34,7 +34,7 @@ const Register = (props) => {
     // console.log(input)
     axios.post('/auth/register', input)
       .then(res => {
-        console.log(res)
+        // console.log(res)
         updateUser(res.data)
         setInput({
           first_name: '',

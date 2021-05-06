@@ -29,6 +29,7 @@ class ChatBox extends Component {
     this.socket.disconnect();
   }
   updateMessage(data) {
+
     console.log(data);
     console.log(this.state.chat.length)
     // this.state.chat.push(data)
@@ -57,7 +58,7 @@ class ChatBox extends Component {
         username: this.props.user.username,
         message: this.state.message
     });
-    console.log('this is sendMessage')
+    // console.log('this is sendMessage')
     this.setState({message: ''})
     }
   }
