@@ -1,6 +1,8 @@
-import React, {useEffect, useRef} from 'react';
-import axios from 'axios';
-import {loginUser, updateUser} from '../../redux/userReducer';
+
+import React, {useEffect, useRef, useState} from 'react';
+import axios from 'axios'
+import {loginUser, updateUser} from '../../redux/userReducer'
+
 import {
     FaUserAlt,
     // FaTimes,
@@ -44,6 +46,12 @@ function MainPage(props) {
         // console.log('working????');
         modalRef.current.openModal();
     };
+
+    const checkGuest = () => {
+        if(!props.user.user_id === 26){
+            openModal()
+        }
+    }
     
     // console.log(props)
     return(
@@ -51,7 +59,7 @@ function MainPage(props) {
             <div className="head-wrap">
                 <h1>WELCOME TO <span>TETRIS FRIENDS</span></h1>
                 <div className="head-user">
-                    <h2 onClick={openModal}><FaUserAlt/>{user.username}</h2>
+                    <h2 onClick={checkGuest}><FaUserAlt/>{user.username}</h2>
                     <hr/>
                     <h3 onClick={logout}>LOGOUT?</h3>
                 </div>

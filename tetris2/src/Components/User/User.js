@@ -59,18 +59,19 @@ const User = (props) => {
       .catch(err => console.log(err))
   }
 
-  const handleDelete = (e) => {
-    // const {updateUser} = props
-    e.preventDefault()
-    setEditView(!editView)
-    // console.log(userInfo)
-    axios.delete('/auth/deleteUser')
-      .then(res => {
-        // console.log('We got here on the HandleDelete')
+  // const handleDelete = (e) => {
+  //   // const {updateUser} = props
+  //   e.preventDefault()
+  //   setEditView(!editView)
+  //   // console.log(userInfo)
+  //   axios.delete('/auth/deleteUser')
+  //     .then(res => {
+  //       console.log('We got here on the HandleDelete')
+
         
-      })
-      .catch(err => console.log(err))
-  }
+  //     })
+  //     .catch(err => console.log(err))
+  // }
 
   // console.log(props)
 
@@ -120,7 +121,7 @@ const User = (props) => {
                   </div>
                   <div className="edit-buttons">
                     <button className="submit" type="submit">Submit</button>
-                    <button className="delete" onClick={handleDelete} >Delete Account</button>
+                    {/* <button className="delete" onClick={handleDelete} >Delete Account</button> */}
                   </div>
                 </form>
               ) : (
