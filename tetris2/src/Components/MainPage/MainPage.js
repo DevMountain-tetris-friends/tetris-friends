@@ -1,7 +1,7 @@
-
 import React, {useEffect, useRef, useState} from 'react';
 import axios from 'axios'
 import {loginUser, updateUser} from '../../redux/userReducer'
+import Leaderboard from './LeaderBoards/LeaderBoard';
 
 import {
     FaUserAlt,
@@ -69,20 +69,16 @@ function MainPage(props) {
                     <Link to={'/tetris'}><button>PLAY</button></Link>
                 </div>
                 <div className="leaderboard-wrap">
-                    <h1>LEADERBOARD</h1>
+                    <Leaderboard/>
                 </div>
             </div>
             <div className="bottom-wrap">
-                <h1 className="chat-box">COMMUNITY BOARD</h1>
+                <h1 className="chat-box">Community Chat</h1>
             </div>
             <Modal ref={modalRef}>
                 <User modalRef={modalRef}/>
             </Modal>
             <div>
-                <CommunityBoard/>
-            </div>
-            <div>
-                <CommunityBoard />
                 <ChatBox />
             </div>
         </div>

@@ -48,10 +48,10 @@ module.exports = {
   },
   userUpdate: async(req, res) => {
     const {user} = req.session; 
-    const {username, first_name, last_name, email} = req.body;
+    const {username, first_name, last_name, email, highest_score} = req.body;
     // console.log(req.body) 
     const db = req.app.get('db');
-    const [updatedPlayer] =  await db.update_player({username, first_name, last_name, email, userId:user.user_id})
+    const [updatedPlayer] =  await db.update_player({username, first_name, last_name, email, highest_score, userId:user.user_id})
     console.log(updatedPlayer)
     delete updatedPlayer.password
     req.session.user = updatedPlayer

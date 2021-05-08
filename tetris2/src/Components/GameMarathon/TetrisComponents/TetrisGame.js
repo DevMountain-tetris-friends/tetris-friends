@@ -1,5 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useSelector } from 'react';
 
+import {updateUser} from '../../../redux/userReducer';
+import {connect} from 'react-redux';
+import axios from 'axios';
+import {Link} from 'react-router-dom';
+
+// Import Stage, Collision, and Styling
 import { createStage, checkCollision } from '../gameHelpers';
 import { StyledTetrisWrapper, StyledTetrisGame } from './styles/StyledTetrisGame';
 
@@ -13,8 +19,17 @@ import { useGameStatus } from '../hooks/useGameStatus';
 import Stage from './Stage';
 import Display from './Display';
 import StartButton from './StartButton';
+import { StyledStartButton } from './styles/StyledStartButton';
 
-const Tetris = () => {
+const Tetris = (props) => {
+
+    const {user, updateUser } = props
+
+    
+    
+      
+  
+
   const [dropTime, setDropTime] = useState(null);
   const [gameOver, setGameOver] = useState(false);
 
@@ -24,8 +39,7 @@ const Tetris = () => {
     rowsCleared
   );
 
-  console.log('re-render');
-  console.log(createStage())
+  
 
   const movePlayer = dir => {
     if (!checkCollision(player, stage, { x: dir, y: 0 })) {
@@ -74,6 +88,25 @@ const Tetris = () => {
     }
   };
 
+  const updateHighScore = (user) => {
+    axios.put("/auth/userUpdate", user)
+    .then(res => {
+        updateUser(res.data);
+        })
+    .catch(err => console.log(err))
+    }
+
+  if(gameOver == true && user.highest_score < score){
+    user.highest_score = score
+
+    
+    
+      updateHighScore(user)
+      console.log("Something Stupid");
+  }
+
+  
+
   const dropPlayer = () => {
     // We don't need to run the interval when we use the arrow down to
     // move the tetromino downwards. So deactivate it for now.
@@ -101,6 +134,8 @@ const Tetris = () => {
     }
   };
 
+  console.log(user.highest_score);
+
   return (
     <StyledTetrisWrapper
       role="button"
@@ -112,7 +147,11 @@ const Tetris = () => {
         <Stage stage={stage} />
         <aside>
           {gameOver ? (
+            <div>
             <Display gameOver={gameOver} text="Game Over" />
+            <Link to={'/mainpage'}><StyledStartButton>Main Page</StyledStartButton></Link>
+            </div>
+            
           ) : (
             <div>
               <Display text={`Score: ${score}`} />
@@ -127,4 +166,10 @@ const Tetris = () => {
   );
 };
 
-export default Tetris;
+const mapStateToProps = (stateRedux) => {
+    return {
+        user: stateRedux.users.user
+    }
+}
+
+export default connect(mapStateToProps, {updateUser})(Tetris);

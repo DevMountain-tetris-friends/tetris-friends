@@ -52,7 +52,7 @@ function Login(props) {
 
         
     }
-    console.log(props)
+    // console.log(props)
     return(
         <div className="login-container">   
             <video autoPlay loop={true} muted>

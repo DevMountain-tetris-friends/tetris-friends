@@ -77,7 +77,8 @@ app.post("/auth/register", player.register);
 app.get("/auth/logout", player.logout);
 app.get("/auth/getUser", player.userData);
 app.put("/auth/userUpdate", player.userUpdate);
-app.delete("/auth/deleteUser", player.deleteUser)
+app.delete("/auth/deleteUser", player.deleteUser);
+app.get("/api/scores", score.AllScores);
 
 app.get("/api/post", community.allPosts)
 app.post("/api/post", community.addPost)
