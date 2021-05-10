@@ -26,7 +26,7 @@ module.exports = {
       return res.status(200).send(post)
     },
     editPost: async (req, res) => {
-        console.log('this is the contoller')
+        // console.log('this is the contoller')
         const { id, title, content} = req.body
         const db = req.app.get('db')
         db.edit_post( title, content, id)
@@ -37,7 +37,7 @@ module.exports = {
     },
     deletePost: (req, res) => {
         const {id} = req.body
-        console.log(id)
+        // console.log(id)
         const db = req.app.get('db')
         db.delete_post(id)
         .then(() => {

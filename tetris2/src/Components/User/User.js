@@ -50,10 +50,10 @@ const User = (props) => {
     const {updateUser} = props
     e.preventDefault()
     setEditView(!editView)
-    console.log(userInfo)
+    // console.log(userInfo)
     axios.put('/auth/userUpdate', userInfo)
       .then(res => {
-        console.log('Hey this is the handleSubmit',res.data)
+        // console.log('Hey this is the handleSubmit',res.data)
         updateUser(res.data)
       })
       .catch(err => console.log(err))
@@ -67,12 +67,13 @@ const User = (props) => {
   //   axios.delete('/auth/deleteUser')
   //     .then(res => {
   //       console.log('We got here on the HandleDelete')
+
         
   //     })
   //     .catch(err => console.log(err))
   // }
 
-  console.log(props)
+  // console.log(props)
 
   return (
     <div className="user-container" >

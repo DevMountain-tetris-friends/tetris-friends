@@ -41,7 +41,7 @@ module.exports = {
     return res.sendStatus(200)
   },
   userData: async(req, res) => {
-    console.log(req.session)
+    // console.log(req.session)
     const { user } = req.session;
     if (user) return res.status(200).send(user);
     else return res.sendStatus(401)
@@ -49,7 +49,7 @@ module.exports = {
   userUpdate: async(req, res) => {
     const {user} = req.session; 
     const {username, first_name, last_name, email} = req.body;
-    console.log(req.body) 
+    // console.log(req.body) 
     const db = req.app.get('db');
     const [updatedPlayer] =  await db.update_player({username, first_name, last_name, email, userId:user.user_id})
     console.log(updatedPlayer)
@@ -60,7 +60,7 @@ module.exports = {
   deleteUser: (req, res) => {
     // console.log(req.session)
     const {user} = req.session;
-    console.log(user)
+    // console.log(user)
     const db = req.app.get('db')
     db.delete_user({userId:user.user_id})
     .then(() => {

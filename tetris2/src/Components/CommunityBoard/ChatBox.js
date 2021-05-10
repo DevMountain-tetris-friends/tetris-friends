@@ -22,72 +22,63 @@ class ChatBox extends Component {
     this.socket.on("message dispatched", data => {
       this.updateMessage(data);
     });
-    this.renderChat()
+  
   }
-
-  // componentDidUpdate (_, prevState) {
-  //   if(prevState.chat.length !== this.state.chat.length) {
-  //     this.renderChat()
-  //   }
-  // }
-  // componentDidUpdate () {
-  //   console.log('this is renderChat')
-  //   const {chat} = this.state
-	// 	return chat.map(({ username, message }, index) => (
-	// 		<div key={index}>
-	// 			<h3>
-	// 				{username}: <span>{message}</span>
-	// 			</h3>
-	// 		</div>
-	// 	))
-  // }
 
   componentWillUnmount() {
     this.socket.disconnect();
   }
   updateMessage(data) {
+
     console.log(data);
-    this.state.chat.push(data)
+    console.log(this.state.chat.length)
+    // this.state.chat.push(data)
+    this.setState({chat: [...this.state.chat, data]})
+    
+    if (this.state.chat.length >= 10) {
+      let chatLength = this.state.chat.shift()
+      // console.log(chatLength)
+      this.setState({chat: [...this.state.chat]})
+      console.log(`the length is greater than 10, the length is ${this.state.chat.length}`)
+    }
     console.log(this.state.chat)
-    this.renderChat()
+    // this.renderChat()
   }
   
-  renderChat = () => {
-    console.log(this.state.chat)
-		return this.state.chat.map(({ username, message }, index) => (
-			<div key={index}>
-				<h3>
-					{username}: <span>{message}</span>
-				</h3>
-			</div>
-		))
-	}
-
-
-
 
   // EVERYONE
   sendMessage() {
-    this.socket.emit("message sent", {
+    const {message} = this.state
+    let emptyCheck = message.replace(/\s/g, '').length
+    if (emptyCheck === 0) {
+      console.log('Message needs be atleast 1 character long.')
+    }
+    else {
+      this.socket.emit("message sent", {
         username: this.props.user.username,
         message: this.state.message
     });
-    console.log('this is sendMessage')
+    // console.log('this is sendMessage')
     this.setState({message: ''})
-    // this.renderChat()
+    }
   }
 
   render() {
-    // setTimeout(() => {
-    //   this.renderChat()
-    // }, 1000);
+    const mapChat = this.state.chat.map(({ username, message }, index) => {
+      
+      return <div key={index}>
+        <h3>
+          {username}: <span>{message}</span>
+        </h3>
+      </div>
+    })
     return (
     
   
 
       // EVERYONE IN ROOM
       <div className="App">
-        <h2>{this.renderChat()}</h2>
+        <h2>{mapChat}</h2>
         
         <div>
               <input value={this.state.message} onChange={e => {
