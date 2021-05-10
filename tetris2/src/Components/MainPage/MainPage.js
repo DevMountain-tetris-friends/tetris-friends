@@ -40,12 +40,16 @@ function MainPage(props) {
     }
     
     const openModal = () => {
-        console.log('working????')
+        // console.log('working????')
         modalRef.current.openModal()
     };
 
     const checkGuest = () => {
-        if(!props.user.user_id === 26){
+        // console.log('hit')
+        console.log(props.user.user_id)
+        if(props.user.user_id === 26){
+            console.log('this is guest')
+        } else {
             openModal()
         }
     }
