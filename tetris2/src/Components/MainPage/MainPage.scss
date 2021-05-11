@@ -2,19 +2,21 @@
 
 .main-section {
   height: 100vh;
-  background: #C0BEBE;
+  // background: #C0BEBE;
 
   .head-wrap {
     display: flex;
-    height: 10%;
+    flex-direction: column;
+    // height: 10%;
     align-items: center;
-    padding: 80px 100px 50px 100px;
-    background: #121119;
+    padding: 30px 100px 30px 100px;
+    // background: #121119;
+    background: #3a62c1;
     color: white;
     justify-content: space-between;
 
     h1 {
-      font-size: 2.5rem;
+      font-size: 3.5rem;
       font-weight: 800;
       flex-direction: row;
       display: flex;
@@ -24,26 +26,72 @@
       }
     }
 
+    hr {
+      height: 1px;
+      width: 100%;
+      background: gray;
+    }
+
     .head-user {
-      
+      display: flex;
+      flex-direction: row;
+      align-items: baseline;
+
+      .username {
+        font-size: 1.65rem;
+        color: white;
+      }
+
       h2 {
         display: flex;
         flex-direction: column;
-        padding: 0 50px;
-        font-size: 2rem;
+        font-size: 1.5rem;
+        padding: $linkSpace;
         align-items: center;
         cursor: pointer;
-      }
+        color: rgb(184, 184, 184);
+        &:hover {
+          color: white;
+        }
 
-      hr {
-        border: gray;
-        height: 1px;
-        background: gray;
+        span {
+          padding: 5px 0 0;
+        }
       }
   
-      h3 {
-        font-size: 1rem;
+      .head-link {
+        display: flex;
+        flex-direction: column;
+        font-size: 1.5rem;
+        padding: $linkSpace;
+        align-items: center;
         cursor: pointer;
+        color: rgb(184, 184, 184);
+        text-decoration: none;
+        &:hover {
+          color: white;
+        }
+
+        span {
+          font-size: 1.5rem;
+          padding: 5px 0 0;
+
+        }
+      }
+
+      .verticle-line {
+        border-left: 6px solid $blue;
+        height: 100%;
+        width: 3px;
+        margin: 0 5px;
+      }
+
+      .header-link {
+        span {
+          @media (max-width: $laptopMd){
+            font-size: 1rem;
+          }
+        }
       }
     }
   }
@@ -60,7 +108,6 @@
       /* text-align: center; */
       display: flex;
       justify-content: center;
-      border: 2px solid black;
 
       button {
         font-size: 3rem;
@@ -69,17 +116,6 @@
 
     .leaderboard-wrap {
       width: 60%;
-      height: 500px;
-      align-items: center;
-      /* text-align: center; */
-      display: flex;
-      border: 2px solid black;
-      
-      h1 {
-        font-size: 3rem;
-        width: 100%;
-        align-self: center;
-      }
     }
   }
 
@@ -96,3 +132,4 @@
     }
   }
 }
+

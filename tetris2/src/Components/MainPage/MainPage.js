@@ -1,8 +1,9 @@
-
 import React, {useEffect, useRef, useState} from 'react';
 import axios from 'axios'
 import {loginUser, updateUser} from '../../redux/userReducer'
-
+import Leaderboard from './LeaderBoards/LeaderBoard';
+import {RiLogoutBoxFill} from 'react-icons/ri'
+import {AiFillRead, AiTwotoneMail} from 'react-icons/ai'
 import {
     FaUserAlt,
     // FaTimes,
@@ -48,7 +49,9 @@ function MainPage(props) {
     };
 
     const checkGuest = () => {
-        if(!props.user.user_id === 26){
+        if(props.user.user_id === 26){
+            return null;
+        } else {
             openModal()
         }
     }
@@ -57,32 +60,32 @@ function MainPage(props) {
     return(
         <div className="main-section">
             <div className="head-wrap">
-                <h1>WELCOME TO <span>TETRIS FRIENDS</span></h1>
+                <h1>TETRIS FRIENDS</h1>
+                <hr/>
                 <div className="head-user">
-                    <h2 onClick={checkGuest}><FaUserAlt/>{user.username}</h2>
-                    <hr/>
-                    <h3 onClick={logout}>LOGOUT?</h3>
+                    <h2 onClick={checkGuest} className='username header-link'><FaUserAlt/><span className='username'>{user.username}</span></h2>
+                    <div className='verticle-line'></div>
+                    <h2 onClick={logout} className='header-link'><RiLogoutBoxFill/><span>Logout</span></h2>
+                    <Link to='/about' className='head-link header-link'><AiFillRead/><span>About</span></Link>
+                    <Link to='/contact' className='head-link header-link'><AiTwotoneMail/><span>Contact</span></Link>
                 </div>
             </div>
             <div className="main-wrap">
                 <div className="play-wrap">
                     <Link to={'/tetris'}><button>PLAY</button></Link>
+                    <Link to={'/tetris'}><button>Hard Mode</button></Link>
                 </div>
                 <div className="leaderboard-wrap">
-                    <h1>LEADERBOARD</h1>
+                    <Leaderboard/>
                 </div>
             </div>
             <div className="bottom-wrap">
-                <h1 className="chat-box">COMMUNITY BOARD</h1>
+                <h1 className="chat-box">Community Chat</h1>
             </div>
             <Modal ref={modalRef}>
                 <User modalRef={modalRef}/>
             </Modal>
             <div>
-                <CommunityBoard/>
-            </div>
-            <div>
-                <CommunityBoard />
                 <ChatBox />
             </div>
         </div>

@@ -7,7 +7,7 @@ import axios from 'axios'
 import './User.scss'
 
 const User = (props) => {
-  const {user, modalRef} = props
+  const {user, modalRef,} = props
   const uploadedImage = React.useRef(null);
   const imageUploader = React.useRef(null);
   const [editView, setEditView] = useState(false)
