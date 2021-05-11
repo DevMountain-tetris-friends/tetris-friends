@@ -73,6 +73,7 @@ function MainPage(props) {
             <div className="main-wrap">
                 <div className="play-wrap">
                     <Link to={'/tetris'}><button>PLAY</button></Link>
+                    <Link to={'/tetris'}><button>Hard Mode</button></Link>
                 </div>
                 <div className="leaderboard-wrap">
                     <Leaderboard/>
