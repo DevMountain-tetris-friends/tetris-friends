@@ -29,7 +29,6 @@ class Leaderboard extends Component {
         const scoreMap = this.state.highscores.map((e,i) => {
             console.log(e.username)
             
-
             return <div>
                 <h3>
                     {e.username}: <span>{e.highest_score}</span>
@@ -39,6 +38,7 @@ class Leaderboard extends Component {
 
         return (
             <div className='leader-container'>
+                {/* {scoreMap} */}
                 <div className='leaderboard'>
                     <h1>
                         <svg class="ico-cup">
