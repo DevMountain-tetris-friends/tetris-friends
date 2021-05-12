@@ -99,9 +99,11 @@
   .main-wrap {
     display: flex;
     flex-direction: row;
+    padding: 0 15rem;
     width: 100%;
     @media (max-width: $laptopSm){
       flex-direction: column;
+      padding: 0;
     }
 
     .play-wrap {

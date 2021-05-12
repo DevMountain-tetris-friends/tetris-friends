@@ -10,7 +10,10 @@ Body
 }
 
 .leader-container {
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
   @media (max-width: $laptopSm){
     justify-content: center;
     display: flex;
@@ -28,17 +31,17 @@ Leaderboard
   // top: 50%;
   // left: 50%;
   // transform: translate(-50%, -50%);
-  width: 385px;
+  width: 50%;
   height: 308px;
   background: linear-gradient(to bottom, #3a404d, #181c26);
   border-radius: 10px;
   box-shadow: 0 7px 30px rgba(9, 21, 62, 0.3);
-  position: relative;
-  left: 150px;
-  top: 100px;
+  // position: relative;
+  // left: 150px;
+  // top: 100px;
   @media (max-width: $laptopSm){
     position: static;
-
+    width: 100%;
   }
 
   h1 {
