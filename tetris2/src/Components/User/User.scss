@@ -137,7 +137,7 @@ button:hover {
 			padding:0;
 			margin:20px 10px 0px 30px;
 			@media (max-width: $phone){
-				margin: 0 0 15px;
+				margin: 20px 0 0;
 				width: 100%;
 			}
 		}
@@ -205,7 +205,7 @@ button:hover {
 				text-shadow:1px 1px 1px rgba(255,255,255,0.8);
 				padding:10px 10px;
 				margin: 20px 0;
-				border-bottom:1.5px solid black;
+				// border-bottom:1.5px solid black;
 				@media (max-width: $phone) {
 					width: 100%;
 					text-align: center;
