@@ -6,7 +6,7 @@ import "./Contact.scss";
 const Contact = () => {
   return (
     <>
-    <Link to='/mainpage'><FaTimes/>Back</Link>
+    <Link to='/mainpage' className='back'><FaTimes/>Back</Link>
     <div className="contact-container">
       <div className="contact-title">REACH OUT & LETS CHAT</div>
       <div className="contact-description">
@@ -18,7 +18,7 @@ const Contact = () => {
             <i className="fas fa-map-marker-alt"></i>
             <div className="address-details">
               <p>Location</p>
-              <p>B22 Bakers Street, Glasgow, Scotland</p>
+              <p>Lehi, UT</p>
             </div>
           </div>
           <div className="email">
@@ -32,7 +32,7 @@ const Contact = () => {
             <i className="fas fa-phone-alt"></i>
             <div className="phone-details">
               <p>Call</p>
-              <p>+1 2222 2222 22</p>
+              <p>(844) 433-8686</p>
             </div>
           </div>
 

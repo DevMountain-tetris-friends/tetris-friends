@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: $darkBlue;
+  background: #2466c3;
   padding: 25px 20px;
   margin: 10px 100px;
   border-radius: 25px;
@@ -67,6 +67,7 @@
 
     .address-details {
       color: var(--dark);
+      text-align: left;
 
         p:first-child {
           font-size: 1.5rem;
@@ -247,4 +248,17 @@ form {
       }
     }
   }
+}
+
+.link-icon {
+  margin: 0 10px;
+  font-size: 1.75rem;
+}
+
+.back {
+  position: relative;
+  right: 40%;
+  text-decoration: none;
+  color: black;
+  font-size: 1.5rem;
 }

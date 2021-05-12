@@ -1,11 +1,16 @@
+@import '../../../variables';
+
 .about-container,
 .about-us-container
 {
-  margin: 50px 150px;
+  margin: 0 150px;
   display: flex;
   align-items: center;
   /* height: 350px; */
   background-color: #f7f7f7;
+  @media (max-width: $laptopSm){
+    margin: 0;
+  }
 }
 
 .image-container {
@@ -17,7 +22,7 @@
 .image {
   width: 100%;
   height: 100%;
-  background: url("https://theblacksheeponline.com/wp-content/uploads/2015/10/FourGuys.jpg")
+  background: url("http://media.bizj.us/view/img/10155526/devmountainjpg*1200xx5184-2916-0-270.jpg")
     no-repeat center / contain;
 }
 
@@ -25,6 +30,13 @@
   padding: 10px;
   height: 100%;
   width: 50%;
+
+  h3 {
+    text-align: left;
+    padding: 8px 0 0;
+    font-weight: 700;
+    font-style: italic;
+  }
 }
 
 .about-title {
@@ -37,8 +49,22 @@
 .about-description {
   font-size: 1rem;
   color: var(--dark);
-  font-style: italic;
-  margin: 12px;
+  // font-style: italic;
+  // margin: 5px;
+  text-align: left;
+  padding: 7px;
+  background: $gray;
+  @media (max-width: $phoneBg){
+    font-size: .85rem;
+  }
+
+  p {
+    margin: 5px;
+    span {
+      background-color: #9e9e9e;
+      // color: white;
+    }
+  }
 }
 
 .list {
@@ -64,23 +90,18 @@
 
 @media (max-width: 1100px) {
   .about-container {
-    margin: 100px 50px;
+    // margin: 0 50px;
   }
 
   .about-title {
-    font-size: 1.8rem;
-  }
-
-  .about-description,
-  .list li {
-    font-size: 0.9rem;
+    font-size: 1.5rem;
   }
 }
 
 @media (max-width: 768px) {
   .about-container {
     flex-direction: column;
-    margin: 100px 25px;
+    margin: 0 25px;
   }
 
   .image-container,
@@ -90,7 +111,7 @@
 
   .image-container {
     padding: 15px;
-    padding-bottom: 0;
+    // padding-bottom: 0; 
   }
 
   .text-container {
@@ -106,5 +127,86 @@
 }
 
 .us-container {
-  
+  width: 100%;
+
+  h1 {
+    padding: 15px 0 35px;
+  }
+
+  .about-div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 10px 0;
+    @media (max-width: $tablet){
+      flex-direction: column;
+      /* text-align: center; */
+      align-items: center;
+      border-top: 1px solid;
+    }
+
+    .about-img-div {
+      width: 40%;
+      height: 150px;
+      padding: 10px;
+      @media (max-width: $tablet){
+        width: 40%;
+        height: auto;
+      }
+
+      img {
+        width: 200px;
+        height: 150px;
+        border-radius: 50%;
+        @media (max-width: $tablet){
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    .about-text-div {
+      width: 60%;
+      @media (max-width: $tablet){
+        width: 50%;
+      }
+
+      h2 {
+        font-size: 2rem;
+        border-bottom: 1px solid black;
+        padding-bottom: 10px;
+      }
+
+      .about-text-links {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        justify-content: baseline;
+
+        a {
+          color: black;
+          font-size: 1.25rem;
+          font-weight: 500;
+          text-decoration: none;
+          padding: 10px 0;
+          @media (max-width: $phone){
+            font-size: .75rem;
+          }
+
+          &:hover {
+            text-decoration: none;
+            // color:rgb(95, 89, 89);
+          }
+        }
+      }
+    }
+  }
+}
+
+.back {
+  position: relative;
+  right: 40%;
+  text-decoration: none;
+  color: black;
+  font-size: 1.5rem;
 }

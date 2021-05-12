@@ -99,7 +99,7 @@ const User = (props) => {
             {
               editView ? (
                 <form onSubmit={handleSubmit}>
-                  <div>
+                  <div className='form-div'>
                     <div>
                       First Name
                     </div>
