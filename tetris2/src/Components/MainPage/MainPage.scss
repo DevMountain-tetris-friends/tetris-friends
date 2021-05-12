@@ -98,17 +98,17 @@
 
   .main-wrap {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     padding: 0 15rem;
     width: 100%;
     @media (max-width: $laptopSm){
-      flex-direction: column;
+      // flex-direction: column;
       padding: 0;
     }
 
     .play-wrap {
-      width: 40%;
-      height: 500px;
+      width: 100%;
+      height: 200px;
       align-items: center;
       /* text-align: center; */
       display: flex;
@@ -124,7 +124,7 @@
     }
 
     .leaderboard-wrap {
-      width: 60%;
+      width: 100%;
       @media (max-width: $laptopSm){
         width: auto;
         // height: 150px;
