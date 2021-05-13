@@ -8,6 +8,7 @@ import {
 import mosesImg from '../../../images/mosesImg.png'
 import samImg from '../../../images/samImg.png'
 import tannerImg from '../../../images/tannerImg.jpg'
+import justinImg from '../../../images/justin-img'
 import "./About.scss";
 
 const About = () => {
@@ -44,11 +45,13 @@ const About = () => {
     <div className='about-us-container'>
       <div className='us-container'>
         <div className='about-div'>
-          <div className='about-img-div'></div>
+          <div className='about-img-div'>
+            <img src={justinImg} alt='justinImg'/>
+          </div>
           <div className='about-text-div'>
             <h2>Justin Mires</h2>
             <div className='about-text-links'>
-              <a><FaGithub className='link-icon'/>Github Account</a>
+              <a href='https://github.com/Changg00?tab=repositories' target='_blank'><FaGithub className='link-icon'/>Github Account</a>
               <a><FaLinkedin className='link-icon'/>LinkedIn Account</a>
             </div>
           </div>

@@ -124,11 +124,13 @@
 form {
   color: white;
   .form-row {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     .form-group {
+      width: 50%;
       input {
-        width: 280px;
+        width: 98%!important;
       }
     }
 
