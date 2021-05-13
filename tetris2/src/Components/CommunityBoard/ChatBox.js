@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {getUser} from '../../redux/userReducer'
 import io from 'socket.io-client';
+import './ChatBox.scss';
 
 class ChatBox extends Component {
   constructor(props) {
@@ -30,12 +31,12 @@ class ChatBox extends Component {
   }
   updateMessage(data) {
 
-    console.log(data);
+    // console.log(data);
     console.log(this.state.chat.length)
     // this.state.chat.push(data)
     this.setState({chat: [...this.state.chat, data]})
     
-    if (this.state.chat.length >= 10) {
+    if (this.state.chat.length >= 20) {
       let chatLength = this.state.chat.shift()
       // console.log(chatLength)
       this.setState({chat: [...this.state.chat]})
@@ -52,6 +53,9 @@ class ChatBox extends Component {
     let emptyCheck = message.replace(/\s/g, '').length
     if (emptyCheck === 0) {
       console.log('Message needs be atleast 1 character long.')
+    }
+    else if(message.length > 50) {
+
     }
     else {
       this.socket.emit("message sent", {
@@ -76,19 +80,27 @@ class ChatBox extends Component {
     
   
 
+     
       // EVERYONE IN ROOM
-      <div className="App">
-        <h2>{mapChat}</h2>
-        
-        <div>
-              <input value={this.state.message} onChange={e => {
+      <div className="chat">
+
+        <div className='chat-title'>
+          <h1>Public Chat</h1>
+        </div>  
+          <div className='messages'>
+            <div className='messages-content'>
+            {mapChat}
+          </div>
+          </div>
+          
+        <div className='message-box' >
+              <input placeholder="Type message..." className='message-input' value={this.state.message} onChange={e => {
                 this.setState({
                   message: e.target.value
                 })
               }} />
-              <button onClick={this.sendMessage}>Send</button>
-            </div>
-              
+              <button className='message-submit'onClick={this.sendMessage}>Send</button>
+            </div>   
       </div>
     );
   }
