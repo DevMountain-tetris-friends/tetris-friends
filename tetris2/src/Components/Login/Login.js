@@ -55,52 +55,20 @@ function Login(props) {
     // console.log(props)
     return(
         <div className="login-container">   
-            <video autoPlay loop={true} muted>
+            {/* <video autoPlay loop={true} muted>
                 <source src={videoBg} type="video/mp4"/>
-            </video>         
+            </video>          */}
             {register ?
-            <>
+            <div className='login-wrap'>
             <h1 className="login-h1">
-                <div>
-                    T
-                    <span className="h1-yellow">E</span>
-                    <span className="h1-blue">T</span>
-                    R
-                    <span className="h1-red">I</span>
-                    <span className="h1-blue h1-space">S</span>
-                </div>
-                <div>
-                    F
-                    <span className="h1-red">R</span>
-                    <span className="h1-yellow">I</span>
-                    E
-                    <span className="h1-red">N</span>
-                    <span className="h1-blue">D</span>
-                    S
-                </div>
+                TETRIS FRIENDS
             </h1>
             <Register setRegister={setRegister}/> 
-            </>
+            </div>
             :
             <div className="login-wrap">
                 <h1 className="login-h1">
-                    <div>
-                        T
-                        <span className="h1-yellow">E</span>
-                        <span className="h1-blue">T</span>
-                        R
-                        <span className="h1-red">I</span>
-                        <span className="h1-blue h1-space">S</span>
-                        <div>
-                    </div>
-                        F
-                        <span className="h1-red">R</span>
-                        <span className="h1-yellow">I</span>
-                        E
-                        <span className="h1-red">N</span>
-                        <span className="h1-blue">D</span>
-                        S
-                    </div>
+                    TETRIS FRIENDS
                 </h1>
                 <div className="login-input">
                     <input placeholder="username..." className='input-box' value={usernameInputText} type='text' onChange={e => setUsernameInputText(e.target.value)}/>

@@ -29,11 +29,11 @@ class Leaderboard extends Component {
         const scoreMap = this.state.highscores.map((e,i) => {
             console.log(e.username)
             
-            return <div>
-                <h3>
-                    {e.username}: <span>{e.highest_score}</span>
-                </h3>
-            </div>
+            return (
+                <li>
+                   <mark> {e.username} </mark>
+                   <small> {e.highest_score}</small>
+                </li> )
         })
 
         return (
@@ -47,26 +47,7 @@ class Leaderboard extends Component {
                         LEADERBOARD
                     </h1>
                     <ol>
-                        <li>
-                        <mark>Jerry Wood</mark>
-                        <small>315</small>
-                        </li>
-                        <li>
-                        <mark>Brandon Barnes</mark>
-                        <small>301</small>
-                        </li>
-                        <li>
-                        <mark>Raymond Knight</mark>
-                        <small>292</small>
-                        </li>
-                        <li>
-                        <mark>Trevor McCormick</mark>
-                        <small>245</small>
-                        </li>
-                        <li>
-                        <mark>Andrew Fox</mark>
-                        <small>203</small>
-                        </li>
+                        {scoreMap}
                     </ol>
                 </div>
                 <svg style={{display: 'none'}}>

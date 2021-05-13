@@ -10,10 +10,13 @@ export const StyledStartButton = styled.button`
     border-radius: 20px;
     border: none;
     color: white;
-    background: #333;
+    background: black;
+    border-radius: 20px;
     font-family: Pixel, Arial, Helvetica, sans-serif;
     font-size: 1rem;
     outline: none;
     cursor: pointer;
+    left: 250px;
+    position: relative;
 
 `
