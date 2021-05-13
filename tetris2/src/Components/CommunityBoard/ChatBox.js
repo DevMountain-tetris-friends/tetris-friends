@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {getUser} from '../../redux/userReducer'
 import io from 'socket.io-client';
+import './ChatBox.scss';
 
 class ChatBox extends Component {
   constructor(props) {
@@ -77,18 +78,25 @@ class ChatBox extends Component {
   
 
       // EVERYONE IN ROOM
-      <div className="App">
-        <h2>{mapChat}</h2>
-        
-        <div>
-              <input value={this.state.message} onChange={e => {
+      <div className="chat">
+
+        <div className='chat-title'>
+          <h1>Public Chat</h1>
+        </div>  
+          <div className='messages'>
+            <div className='messages-content'>
+            {mapChat}
+          </div>
+          </div>
+          
+        <div className='message-box' >
+              <input placeholder="Type message..." className='message-input' value={this.state.message} onChange={e => {
                 this.setState({
                   message: e.target.value
                 })
               }} />
-              <button onClick={this.sendMessage}>Send</button>
-            </div>
-              
+              <button className='message-submit'onClick={this.sendMessage}>Send</button>
+            </div>   
       </div>
     );
   }
