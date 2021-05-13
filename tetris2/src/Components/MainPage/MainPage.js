@@ -84,10 +84,11 @@ function MainPage(props) {
                 <div className="leaderboard-wrap">
                     <Leaderboard/>
                 </div>
-            </div>
-            <div className='bottom-wrap'>
+                <div className='bottom-wrap'>
                 <ChatBox />
             </div>
+            </div>
+            
             <Modal ref={modalRef}>
                 <User modalRef={modalRef}/>
             </Modal>

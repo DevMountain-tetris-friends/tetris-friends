@@ -112,6 +112,8 @@
     flex-direction: column;
     padding: 0 15rem;
     width: 100%;
+    height: auto;
+    background-color: black;
     @media (max-width: $laptopSm){
       // flex-direction: column;
       padding: 0;
@@ -166,9 +168,9 @@
   }
 
   .bottom-wrap {
-    height: 25%;
+    height: 300px;
     display: flex;
-    padding-right: 50px;
+    margin-top: 30px;
     justify-content: flex-end;
     align-items: center;
 

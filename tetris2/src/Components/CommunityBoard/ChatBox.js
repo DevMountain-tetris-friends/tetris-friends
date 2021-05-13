@@ -36,7 +36,7 @@ class ChatBox extends Component {
     // this.state.chat.push(data)
     this.setState({chat: [...this.state.chat, data]})
     
-    if (this.state.chat.length >= 20) {
+    if (this.state.chat.length >= 9) {
       let chatLength = this.state.chat.shift()
       // console.log(chatLength)
       this.setState({chat: [...this.state.chat]})
