@@ -1,0 +1,1 @@
+SELECT username, highest_score FROM users LIMIT 10;

@@ -82,7 +82,7 @@ button:hover {
 	.left_col {
 		float:left;
 		height:340px;
-		width:40%;
+		width:30%;
 		padding-top:85px;
 		box-sizing:border-box;
 		@media (max-width: $phone){
@@ -94,10 +94,17 @@ button:hover {
 		}
 
 		.user_info {
-			margin:15px 0px 0px 35px;
+			margin:15px 0px 0px 15px;
 			font-weight:300;
 			font-size:22px;
 			color:rgba(30,30,30,1);
+
+			h1 {
+				font-size: 16px;
+				@media (max-width: $phoneBg){
+					display: none;
+				}
+			}
 
 			button {
 				font-size: 1rem;
@@ -109,13 +116,13 @@ button:hover {
 	.right_col {
 		float:left;
 		height:340px;
-		width:60%;
+		width:70%;
 		background:rgba(245,245,245,1);
 		border-left:1px solid rgba(230,230,230,1);
 		box-shadow:inset 0px 1px 1px rgba(255,255,255,0.7);
 		margin-left:-1px;
 		border-bottom-right-radius:5px;
-		@media (max-width: $phone){
+		@media (max-width: $phoneBg){
 			float: none;
 			height: auto;
 			margin: 0;
@@ -147,6 +154,7 @@ button:hover {
 
 			form {
 				margin: 20px 5px;
+				color: black;
 				@media (max-width: $phone){
 					margin: 0;
 					display: flex;
@@ -185,16 +193,6 @@ button:hover {
 						background: rgb(46, 87, 33);
 					}
 				}
-
-				.delete {
-					background: rgb(187, 102, 102);
-					color: white;
-					// font-weight: 700;
-
-					&:hover {
-						background: rgb(136, 21, 21);
-					}
-				}
 			}
 
 			li {
@@ -219,7 +217,7 @@ button:hover {
 				}
 
 				span {
-					font-size: 24px;
+					font-size: 20px;
 					color: black;
 				}
 

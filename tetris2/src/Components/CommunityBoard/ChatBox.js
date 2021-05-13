@@ -9,7 +9,7 @@ class ChatBox extends Component {
     this.state = {
       input: "",
       message: "",
-      username: 'tod',
+      username: '',
       chat: []
     };
 

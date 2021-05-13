@@ -9,13 +9,22 @@ const StyledStartButton = styled.button`
   min-height: 30px;
   width: 100%;
   border-radius: 20px;
-  border: none;
-  color: white;
-  background: #333;
+  border: 4px solid #333;
+  left: 250px;
+  color: #58ffff;
+  background: black;
   font-family: Pixel, Arial, Helvetica, sans-serif;
   font-size: 1rem;
   outline: none;
   cursor: pointer;
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
+
+  box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
+
+  position: relative;
+}
+
+  
 `;
 
 const StartButton = ({ callback }) => (
