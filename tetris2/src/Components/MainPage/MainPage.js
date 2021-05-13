@@ -72,6 +72,7 @@ function MainPage(props) {
             </div>
             <div className="main-wrap">
                 <div className="play-wrap">
+
                     <div className='play-header'>
                         <h2>Choose a Mode</h2>
                     </div>

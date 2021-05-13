@@ -23,8 +23,6 @@ class CommunityBoard extends Component {
     render () {
         return (
             <div>
-                
-                
                 <DisplayPost />
             </div>
         );
