@@ -43,13 +43,8 @@ function MainPage(props) {
     }
     
     const openModal = () => {
-<<<<<<< HEAD
-        // console.log('working????')
-        modalRef.current.openModal()
-=======
         // console.log('working????');
         modalRef.current.openModal();
->>>>>>> 953af08acdcef68a1a608823e72d950a08245a24
     };
 
     const checkGuest = () => {
