@@ -49,8 +49,15 @@ function MainPage(props) {
     };
 
     const checkGuest = () => {
+<<<<<<< HEAD
         if(props.user.user_id === 26){
             return null;
+=======
+        // console.log('hit')
+        console.log(props.user.user_id)
+        if(props.user.user_id === 26){
+            console.log('this is guest')
+>>>>>>> bd6b401b7f0201f667b33ea7ac5188bbed8cbccb
         } else {
             openModal()
         }
